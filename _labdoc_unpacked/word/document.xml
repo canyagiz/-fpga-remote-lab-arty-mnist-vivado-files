@@ -1,0 +1,4478 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" mc:Ignorable="w14 w15 wp14">
+  <w:body>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="160" w:before="800"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="40"/>
+          <w:szCs w:val="40"/>
+        </w:rPr>
+        <w:t xml:space="preserve">FPGA-Based CNN Inference Laboratory</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:color w:val="3A5F7D"/>
+          <w:sz w:val="22"/>
+          <w:szCs w:val="22"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Design and Implementation Summary</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="40"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:color w:val="888888"/>
+          <w:sz w:val="19"/>
+          <w:szCs w:val="19"/>
+        </w:rPr>
+        <w:t xml:space="preserve">H-BRS Remote-Access FPGA Laboratory — Digilent Arty Z7</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pBdr>
+          <w:bottom w:val="single" w:color="CCCCCC" w:sz="4" w:space="1"/>
+        </w:pBdr>
+        <w:spacing w:after="140" w:before="140"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">1. Purpose</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">This document defines a new experiment for the H-BRS remote-access FPGA lab, running on the Digilent Arty Z7. It consists of two parts: Lab 1, where students implement an MNIST CNN inference pipeline in Verilog using fixed, provided weights, and Lab 2, where students reuse that hardware to compare different weight quantization levels.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="9026"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="9026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="6"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="EEF2F7" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="120"/>
+              <w:left w:type="dxa" w:w="180"/>
+              <w:bottom w:type="dxa" w:w="120"/>
+              <w:right w:type="dxa" w:w="180"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:pPr>
+              <w:spacing w:after="60"/>
+            </w:pPr>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="2E4057"/>
+                <w:sz w:val="20"/>
+                <w:szCs w:val="20"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Why this experiment</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="20"/>
+                <w:szCs w:val="20"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Existing Cyclone-based experiments apply fixed image filters. This experiment runs real neural-network inference entirely inside FPGA fabric — no CPU involved in the computation — demonstrating hardware-accelerated AI in practice.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">2. Target Hardware</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="3000"/>
+        <w:gridCol w:w="6026"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Component</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Detail</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">SoC</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Xilinx Zynq-7000 XC7Z020</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Used in this lab</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">FPGA fabric (PL) only — ARM cores (PS) are not used</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">LUTs / DSP48 / BRAM</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">53,200 LUTs · 220 DSP48 · 140 × 18Kb BRAM</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Programming</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Onboard USB-JTAG via PROG/UART port, no external programmer needed</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Toolchain</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Xilinx Vivado</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">ARM is intentionally out of scope: combining ARM and FPGA is a valid direction for a future, more advanced lab, but adds a second toolchain not needed to teach this lab's core lesson — hardware datapath design.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Estimated resource usage for an INT8 implementation:</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="2400"/>
+        <w:gridCol w:w="2200"/>
+        <w:gridCol w:w="4426"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Resource</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Total</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="4426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Estimated use</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">LUT</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">53,200</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="4426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">~20k–28k (37–52%)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">DSP48</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">220</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="4426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">~80–120 (36–54%)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">BRAM</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">140</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="4426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">~40–60 (28–42%)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">3. Key Concepts</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:spacing w:after="120" w:before="240"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">3.1 What a LUT Is</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">A LUT (Look-Up Table) is a tiny block of SRAM: inputs act as an address, the output is the bit stored there. A 6-input LUT stores a 64-bit truth table, so any function of up to 6 variables can be implemented by writing the right bits into it — this is what &#x201C;programming&#x201D; an FPGA largely means. The Arty Z7's 53,200 LUTs operate in parallel, which is the source of FPGA speed for tasks like CNN inference. BRAM and DSP48 are separate, dedicated blocks — not built from LUTs.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:spacing w:after="120" w:before="240"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">3.2 Training vs. Inference</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Training (forward + backward pass, weight updates, many epochs) happens once, in software, on the developer's PC, before the lab is deployed. Inference (forward pass only, fixed weights, one image in → one prediction out) is what runs on the FPGA. The board never trains anything — it only executes the fixed arithmetic of an already-trained network, which is exactly what FPGA hardware accelerates well.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:spacing w:after="120" w:before="240"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">3.3 One Weight File, Many Student Designs</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">The provided .coe weight file contains only numbers, not an architecture. What is fixed for everyone: layer count, filter counts, kernel sizes, weight values. What each student designs independently: parallel vs. serial computation, pipeline depth, internal bit-widths, BRAM access patterns. Because the architecture is fixed, the same weight values apply regardless of how a student's hardware reads and processes them — two completely different designs can load the same .coe file and both produce the correct classification, just at different speeds and resource costs. The provided testbench checks only input/output correctness, not internal structure, which is what allows this architectural freedom.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">4. CNN Architecture</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Fixed for all students. Input: 28×28 grayscale image.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="3200"/>
+        <w:gridCol w:w="3000"/>
+        <w:gridCol w:w="2826"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Layer</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Parameters</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Output</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Conv1 + ReLU + MaxPool</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">8 filters, 3×3</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">13×13×8</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Conv2 + ReLU + MaxPool</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">16 filters, 3×3</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">5×5×16</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">FC1 + ReLU</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">400 → 128</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">128</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3200"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">FC2 + ArgMax</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">128 → 10</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">1 digit (0–9)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:spacing w:after="120" w:before="240"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">4.1 Developer Side (Off-Board)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Train the CNN in TensorFlow/PyTorch on MNIST — target 98%+ FP32 accuracy.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Quantize trained weights to FP32 (reference), INT8, INT4, INT2.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Export each version as a .coe Block-RAM initialization file.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">scale = 127 / max(abs(weights));  int8_value = round(w * scale)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:spacing w:after="120" w:before="240"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">4.2 Student Side (On Hardware)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Image → Conv1 → ReLU → Pool → Conv2 → ReLU → Pool → FC1 → ReLU → FC2 → ArgMax → predicted digit, shown over HDMI. Weights stay fixed in BRAM throughout; only the input image changes between runs.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">5. System Flow and Integration</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Student reserves the lab and uploads a synthesized .bit file via the browser.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Flask backend runs openFPGALoader to program the Arty Z7 over USB-JTAG.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Student selects or uploads a test image; the FPGA runs inference.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Result is output over HDMI → captured by Magewell → streamed back to the browser.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="2600"/>
+        <w:gridCol w:w="6426"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2600"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Connection</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">From → To</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2600"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Programming + power</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Shuttle USB → Arty Z7 PROG/UART (single USB Micro-B cable)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2600"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Video</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Arty Z7 HDMI OUT → Magewell HDMI IN → Shuttle USB</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2600"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Lab control</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6426"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Shuttle eno1 → Raspberry Pi eth0 (Ethernet)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">No external PMIC, jumper wiring, or USB Blaster is needed — unlike the Cyclone boards, the Arty Z7 has onboard power regulation and an onboard JTAG programmer.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="3000"/>
+        <w:gridCol w:w="6026"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Software change</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Detail</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">docker-compose.yml</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Add fpga-lab-z7 service, port 5003</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">config_exp_z7.py</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">New config; defines openFPGALoader invocation</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Flask app</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Add /upload_bitfile endpoint</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="3000"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">laboratories.yml / resources.yml</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="6026"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Register the new lab and FPGA-4 resource</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">6. Lab 1 — Student Workflow</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Goal: implement the hardware datapath for the fixed CNN architecture above, using the provided INT8 weights. Provided: top_module.v (interface only), image_buffer.v, tb_top.v, constraints.xdc, int8_weights.coe, module specs, test images. To be designed: conv_module.v, relu_module.v, maxpool_module.v, fc_module.v, argmax_module.v.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Read each module's port specification and decide an implementation strategy (e.g. parallel vs. serial multiply-accumulate).</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Implement and simulate each module in isolation against known input/output pairs.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Assemble all modules into top_module.v, propagating the valid signal correctly through the pipeline.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Run full-pipeline simulation with the provided testbench.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Synthesize and implement in Vivado; check the timing report (WNS must be positive at 125 MHz).</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Generate the bitstream, upload it via the LDE portal, and run inference on real hardware.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Key technical points: fixed-point scaling after each multiply (e.g. shifting a 16-bit product back to 8 bits), a consistent valid/ready interface between modules, and loading weights into BRAM via $readmemh.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:spacing w:after="120" w:before="240"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="24"/>
+          <w:szCs w:val="24"/>
+        </w:rPr>
+        <w:t xml:space="preserve">6.6 Physical I/O: Buttons and LEDs</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Two buttons and six LEDs are wired into the design to give students a tangible hardware control and output point, beyond the HDMI display. Per the latest pin connection file, buttons are routed from the Raspberry Pi's GPIO into the Arty Z7's JA header (inputs), and LEDs are routed from the FPGA out through the JB header back to the Raspberry Pi (outputs) — neither uses the board's own onboard buttons/LEDs directly.</w:t>
+      </w:r>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="1500"/>
+        <w:gridCol w:w="2400"/>
+        <w:gridCol w:w="2400"/>
+        <w:gridCol w:w="2726"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Signal</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Pin</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Header</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2726"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Role</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">BTN0</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">T11</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">JA3 (RPi → FPGA)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2726"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Physical reset — wired to the design's rst input</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">BTN1</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">T10</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">JA4 (RPi → FPGA)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2726"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Start/trigger — begins inference once an image is loaded</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">LD0–LD5</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">W12, W11, V10, W8, V12, W10</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2400"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">JB1–JB8 (FPGA → RPi)</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="2726"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Predicted digit (0–9) shown as binary, in parallel with the HDMI output</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">These signals are defined in constraints.xdc and added to the top_module.v port list:</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">module top_module (</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    input  wire clk,</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    input  wire btn0,        // physical reset</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    input  wire btn1,        // physical start trigger</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    output wire [5:0] led,   // predicted digit, binary (6 bits available)</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">    // image input, HDMI output...</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">);</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="30" w:before="30"/>
+        <w:ind w:left="720"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Courier New" w:cs="Courier New" w:eastAsia="Courier New" w:hAnsi="Courier New"/>
+          <w:color w:val="1A1A1A"/>
+          <w:sz w:val="18"/>
+          <w:szCs w:val="18"/>
+        </w:rPr>
+        <w:t xml:space="preserve">assign rst = btn0;</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">With 6 LED lines available, the predicted digit (0–9) only requires 4 bits, leaving 2 lines free — these may optionally be used as status indicators (e.g. &#x201C;inference running&#x201D; or &#x201C;result ready&#x201D;) in addition to the digit output.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Note: SW0, SW1, BTN2, and BTN3 are also available (routed via the Raspberry Pi's GPIO into JA) but are not used in this lab to keep the design scope focused.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Lab report should include: classification accuracy on the test set, Vivado resource utilization (LUT/DSP/BRAM/FF), achieved clock frequency, and a short rationale for the architectural choices made.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">7. Lab 2 — Quantization Comparison</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Reuses the Lab 1 design unchanged — only the BRAM weight file changes. FP32 is expensive in FPGA fabric; INT8 uses DSP48 blocks far more efficiently and cuts BRAM use roughly 4×, usually at a small accuracy cost. INT4/INT2 save further resources but can degrade accuracy substantially — this lab lets students find that breaking point directly.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Swap in each weight file (FP32 → INT8 → INT4 → INT2) one at a time.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Re-synthesize, generate a new bitstream, and re-test on the same image set.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="3"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Record accuracy, resource usage, and max frequency for each version.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:tbl>
+      <w:tblPr>
+        <w:tblW w:type="dxa" w:w="9026"/>
+        <w:tblBorders>
+          <w:top w:val="single" w:color="auto" w:sz="4"/>
+          <w:left w:val="single" w:color="auto" w:sz="4"/>
+          <w:bottom w:val="single" w:color="auto" w:sz="4"/>
+          <w:right w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideH w:val="single" w:color="auto" w:sz="4"/>
+          <w:insideV w:val="single" w:color="auto" w:sz="4"/>
+        </w:tblBorders>
+      </w:tblPr>
+      <w:tblGrid>
+        <w:gridCol w:w="1800"/>
+        <w:gridCol w:w="1500"/>
+        <w:gridCol w:w="1300"/>
+        <w:gridCol w:w="1300"/>
+        <w:gridCol w:w="1300"/>
+        <w:gridCol w:w="1826"/>
+      </w:tblGrid>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1800"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Quantization</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Accuracy</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">LUT</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">DSP</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">BRAM</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:left w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:bottom w:val="single" w:color="2E4057" w:sz="1"/>
+              <w:right w:val="single" w:color="2E4057" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="2E4057" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:b/>
+                <w:bCs/>
+                <w:color w:val="FFFFFF"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">Max freq.</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1800"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">FP32</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1800"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">INT8</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1800"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">INT4</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="FFFFFF" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+      <w:tr>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1800"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">INT2</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1500"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1300"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+        <w:tc>
+          <w:tcPr>
+            <w:tcW w:type="dxa" w:w="1826"/>
+            <w:tcBorders>
+              <w:top w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:left w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:bottom w:val="single" w:color="CCCCCC" w:sz="1"/>
+              <w:right w:val="single" w:color="CCCCCC" w:sz="1"/>
+            </w:tcBorders>
+            <w:shd w:fill="F5F7FA" w:val="clear"/>
+            <w:tcMar>
+              <w:top w:type="dxa" w:w="70"/>
+              <w:left w:type="dxa" w:w="110"/>
+              <w:bottom w:type="dxa" w:w="70"/>
+              <w:right w:type="dxa" w:w="110"/>
+            </w:tcMar>
+          </w:tcPr>
+          <w:p>
+            <w:r>
+              <w:rPr>
+                <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+                <w:color w:val="1A1A1A"/>
+                <w:sz w:val="19"/>
+                <w:szCs w:val="19"/>
+              </w:rPr>
+              <w:t xml:space="preserve">—</w:t>
+            </w:r>
+          </w:p>
+        </w:tc>
+      </w:tr>
+    </w:tbl>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="100" w:before="60"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Analysis questions: At which quantization level does accuracy become unacceptable? How does DSP/BRAM usage scale with bit-width? Which level gives the best accuracy-vs-resource trade-off?</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="Heading1"/>
+        <w:spacing w:after="160" w:before="320"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:b/>
+          <w:bCs/>
+          <w:color w:val="2E4057"/>
+          <w:sz w:val="30"/>
+          <w:szCs w:val="30"/>
+        </w:rPr>
+        <w:t xml:space="preserve">8. Developer Checklist</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Train model (98%+ FP32 accuracy) and produce INT8/INT4/INT2 .coe files.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Write and validate a reference Verilog implementation (not given to students).</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Add /upload_bitfile to Flask; install openFPGALoader in the Docker image.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Add fpga-lab-z7 to docker-compose.yml; register the lab in laboratories.yml / resources.yml.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Prepare 50+ test images and student-facing instructions/specs.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:numPr>
+          <w:ilvl w:val="0"/>
+          <w:numId w:val="2"/>
+        </w:numPr>
+        <w:spacing w:after="40" w:before="40"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:sz w:val="21"/>
+          <w:szCs w:val="21"/>
+        </w:rPr>
+        <w:t xml:space="preserve">Run a full end-to-end test: reserve → upload → program → infer → view result in browser.</w:t>
+      </w:r>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:after="80" w:before="80"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:pBdr>
+          <w:bottom w:val="single" w:color="CCCCCC" w:sz="4" w:space="1"/>
+        </w:pBdr>
+        <w:spacing w:after="140" w:before="140"/>
+      </w:pPr>
+    </w:p>
+    <w:p>
+      <w:pPr>
+        <w:spacing w:before="160"/>
+        <w:jc w:val="center"/>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rFonts w:ascii="Arial" w:cs="Arial" w:eastAsia="Arial" w:hAnsi="Arial"/>
+          <w:color w:val="888888"/>
+          <w:sz w:val="17"/>
+          <w:szCs w:val="17"/>
+        </w:rPr>
+        <w:t xml:space="preserve">H-BRS Remote-Access FPGA Laboratory — Arty Z7 Integration Project</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr>
+      <w:pgSz w:w="11906" w:h="16838" w:orient="portrait"/>
+      <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="708" w:footer="708" w:gutter="0"/>
+      <w:pgNumType/>
+      <w:docGrid w:linePitch="360"/>
+    </w:sectPr>
+  </w:body>
+</w:document>

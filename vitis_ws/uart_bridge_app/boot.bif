@@ -1,0 +1,5 @@
+the_ROM_image: 
+{ 
+    [bootloader] C:\Users\iremg\mnist_cnn\vitis_ws\top_module_platform\zynq_fsbl\build\fsbl.elf 
+    C:\Users\iremg\mnist_cnn\vitis_ws\uart_bridge_app\build\uart_bridge_app.elf 
+} 

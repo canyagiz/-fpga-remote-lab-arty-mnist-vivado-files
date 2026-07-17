@@ -1,0 +1,172 @@
+FPGA-Based CNN Inference Laboratory
+Design and Implementation Summary
+H-BRS Remote-Access FPGA Laboratory — Digilent Arty Z7
+1. Purpose
+This document defines a new experiment for the H-BRS remote-access FPGA lab, running on the Digilent Arty Z7. It consists of two parts: Lab 1, where students implement an MNIST CNN inference pipeline in Verilog using fixed, provided weights, and Lab 2, where students reuse that hardware to compare different weight quantization levels.
+Why this experiment
+Existing Cyclone-based experiments apply fixed image filters. This experiment runs real neural-network inference entirely inside FPGA fabric — no CPU involved in the computation — demonstrating hardware-accelerated AI in practice.
+2. Target Hardware
+Component
+Detail
+SoC
+Xilinx Zynq-7000 XC7Z020
+Used in this lab
+FPGA fabric (PL) only — ARM cores (PS) are not used
+LUTs / DSP48 / BRAM
+53,200 LUTs · 220 DSP48 · 140 × 18Kb BRAM
+Programming
+Onboard USB-JTAG via PROG/UART port, no external programmer needed
+Toolchain
+Xilinx Vivado
+ARM is intentionally out of scope: combining ARM and FPGA is a valid direction for a future, more advanced lab, but adds a second toolchain not needed to teach this lab's core lesson — hardware datapath design.
+Estimated resource usage for an INT8 implementation:
+Resource
+Total
+Estimated use
+LUT
+53,200
+~20k–28k (37–52%)
+DSP48
+220
+~80–120 (36–54%)
+BRAM
+140
+~40–60 (28–42%)
+3. Key Concepts
+3.1 What a LUT Is
+A LUT (Look-Up Table) is a tiny block of SRAM: inputs act as an address, the output is the bit stored there. A 6-input LUT stores a 64-bit truth table, so any function of up to 6 variables can be implemented by writing the right bits into it — this is what &#x201C;programming&#x201D; an FPGA largely means. The Arty Z7's 53,200 LUTs operate in parallel, which is the source of FPGA speed for tasks like CNN inference. BRAM and DSP48 are separate, dedicated blocks — not built from LUTs.
+3.2 Training vs. Inference
+Training (forward + backward pass, weight updates, many epochs) happens once, in software, on the developer's PC, before the lab is deployed. Inference (forward pass only, fixed weights, one image in → one prediction out) is what runs on the FPGA. The board never trains anything — it only executes the fixed arithmetic of an already-trained network, which is exactly what FPGA hardware accelerates well.
+3.3 One Weight File, Many Student Designs
+The provided .coe weight file contains only numbers, not an architecture. What is fixed for everyone: layer count, filter counts, kernel sizes, weight values. What each student designs independently: parallel vs. serial computation, pipeline depth, internal bit-widths, BRAM access patterns. Because the architecture is fixed, the same weight values apply regardless of how a student's hardware reads and processes them — two completely different designs can load the same .coe file and both produce the correct classification, just at different speeds and resource costs. The provided testbench checks only input/output correctness, not internal structure, which is what allows this architectural freedom.
+4. CNN Architecture
+Fixed for all students. Input: 28×28 grayscale image.
+Layer
+Parameters
+Output
+Conv1 + ReLU + MaxPool
+8 filters, 3×3
+13×13×8
+Conv2 + ReLU + MaxPool
+16 filters, 3×3
+5×5×16
+FC1 + ReLU
+400 → 128
+128
+FC2 + ArgMax
+128 → 10
+1 digit (0–9)
+4.1 Developer Side (Off-Board)
+Train the CNN in TensorFlow/PyTorch on MNIST — target 98%+ FP32 accuracy.
+Quantize trained weights to FP32 (reference), INT8, INT4, INT2.
+Export each version as a .coe Block-RAM initialization file.
+scale = 127 / max(abs(weights));  int8_value = round(w * scale)
+4.2 Student Side (On Hardware)
+Image → Conv1 → ReLU → Pool → Conv2 → ReLU → Pool → FC1 → ReLU → FC2 → ArgMax → predicted digit, shown over HDMI. Weights stay fixed in BRAM throughout; only the input image changes between runs.
+5. System Flow and Integration
+Student reserves the lab and uploads a synthesized .bit file via the browser.
+Flask backend runs openFPGALoader to program the Arty Z7 over USB-JTAG.
+Student selects or uploads a test image; the FPGA runs inference.
+Result is output over HDMI → captured by Magewell → streamed back to the browser.
+Connection
+From → To
+Programming + power
+Shuttle USB → Arty Z7 PROG/UART (single USB Micro-B cable)
+Video
+Arty Z7 HDMI OUT → Magewell HDMI IN → Shuttle USB
+Lab control
+Shuttle eno1 → Raspberry Pi eth0 (Ethernet)
+No external PMIC, jumper wiring, or USB Blaster is needed — unlike the Cyclone boards, the Arty Z7 has onboard power regulation and an onboard JTAG programmer.
+Software change
+Detail
+docker-compose.yml
+Add fpga-lab-z7 service, port 5003
+config_exp_z7.py
+New config; defines openFPGALoader invocation
+Flask app
+Add /upload_bitfile endpoint
+laboratories.yml / resources.yml
+Register the new lab and FPGA-4 resource
+6. Lab 1 — Student Workflow
+Goal: implement the hardware datapath for the fixed CNN architecture above, using the provided INT8 weights. Provided: top_module.v (interface only), image_buffer.v, tb_top.v, constraints.xdc, int8_weights.coe, module specs, test images. To be designed: conv_module.v, relu_module.v, maxpool_module.v, fc_module.v, argmax_module.v.
+Read each module's port specification and decide an implementation strategy (e.g. parallel vs. serial multiply-accumulate).
+Implement and simulate each module in isolation against known input/output pairs.
+Assemble all modules into top_module.v, propagating the valid signal correctly through the pipeline.
+Run full-pipeline simulation with the provided testbench.
+Synthesize and implement in Vivado; check the timing report (WNS must be positive at 125 MHz).
+Generate the bitstream, upload it via the LDE portal, and run inference on real hardware.
+Key technical points: fixed-point scaling after each multiply (e.g. shifting a 16-bit product back to 8 bits), a consistent valid/ready interface between modules, and loading weights into BRAM via $readmemh.
+6.6 Physical I/O: Buttons and LEDs
+Two buttons and six LEDs are wired into the design to give students a tangible hardware control and output point, beyond the HDMI display. Per the latest pin connection file, buttons are routed from the Raspberry Pi's GPIO into the Arty Z7's JA header (inputs), and LEDs are routed from the FPGA out through the JB header back to the Raspberry Pi (outputs) — neither uses the board's own onboard buttons/LEDs directly.
+Signal
+Pin
+Header
+Role
+BTN0
+T11
+JA3 (RPi → FPGA)
+Physical reset — wired to the design's rst input
+BTN1
+T10
+JA4 (RPi → FPGA)
+Start/trigger — begins inference once an image is loaded
+LD0–LD5
+W12, W11, V10, W8, V12, W10
+JB1–JB8 (FPGA → RPi)
+Predicted digit (0–9) shown as binary, in parallel with the HDMI output
+These signals are defined in constraints.xdc and added to the top_module.v port list:
+module top_module (
+    input  wire clk,
+    input  wire btn0,        // physical reset
+    input  wire btn1,        // physical start trigger
+    output wire [5:0] led,   // predicted digit, binary (6 bits available)
+    // image input, HDMI output...
+);
+assign rst = btn0;
+With 6 LED lines available, the predicted digit (0–9) only requires 4 bits, leaving 2 lines free — these may optionally be used as status indicators (e.g. &#x201C;inference running&#x201D; or &#x201C;result ready&#x201D;) in addition to the digit output.
+Note: SW0, SW1, BTN2, and BTN3 are also available (routed via the Raspberry Pi's GPIO into JA) but are not used in this lab to keep the design scope focused.
+Lab report should include: classification accuracy on the test set, Vivado resource utilization (LUT/DSP/BRAM/FF), achieved clock frequency, and a short rationale for the architectural choices made.
+7. Lab 2 — Quantization Comparison
+Reuses the Lab 1 design unchanged — only the BRAM weight file changes. FP32 is expensive in FPGA fabric; INT8 uses DSP48 blocks far more efficiently and cuts BRAM use roughly 4×, usually at a small accuracy cost. INT4/INT2 save further resources but can degrade accuracy substantially — this lab lets students find that breaking point directly.
+Swap in each weight file (FP32 → INT8 → INT4 → INT2) one at a time.
+Re-synthesize, generate a new bitstream, and re-test on the same image set.
+Record accuracy, resource usage, and max frequency for each version.
+Quantization
+Accuracy
+LUT
+DSP
+BRAM
+Max freq.
+FP32
+—
+—
+—
+—
+—
+INT8
+—
+—
+—
+—
+—
+INT4
+—
+—
+—
+—
+—
+INT2
+—
+—
+—
+—
+—
+Analysis questions: At which quantization level does accuracy become unacceptable? How does DSP/BRAM usage scale with bit-width? Which level gives the best accuracy-vs-resource trade-off?
+8. Developer Checklist
+Train model (98%+ FP32 accuracy) and produce INT8/INT4/INT2 .coe files.
+Write and validate a reference Verilog implementation (not given to students).
+Add /upload_bitfile to Flask; install openFPGALoader in the Docker image.
+Add fpga-lab-z7 to docker-compose.yml; register the lab in laboratories.yml / resources.yml.
+Prepare 50+ test images and student-facing instructions/specs.
+Run a full end-to-end test: reserve → upload → program → infer → view result in browser.
+H-BRS Remote-Access FPGA Laboratory — Arty Z7 Integration Project
