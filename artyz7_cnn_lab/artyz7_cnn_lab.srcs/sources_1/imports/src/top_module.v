@@ -95,10 +95,21 @@ reg signed [7:0] fmap5 [0:127];
 reg signed [7:0] fmap6 [0:9];
 
 // =============================================================================
-// UART image loader — receives 784 bytes straight from the Raspberry Pi and
-// writes them into fmap0 as they arrive. Runs entirely on clk_pl, so no CDC
-// synchronizer is needed for img_done (unlike the old PS-bridge GPIO flag,
-// which crossed from the PS's own clock domain).
+// Test image ROM — 10 preset MNIST images, loaded once via $readmemh.
+// Replaces per-experiment UART pixel streaming: the RPi now sends a single
+// index byte (0-9) instead of 784 raw pixel bytes, since streaming the full
+// image proved unreliable (transfer would stall partway through, root cause
+// never pinned down).
+// =============================================================================
+localparam NUM_TEST_IMAGES = 10;
+reg [7:0] test_images [0:NUM_TEST_IMAGES*784-1];
+initial $readmemh("test_images.mem", test_images);
+
+// =============================================================================
+// UART image-select loader — receives a single index byte from the
+// Raspberry Pi identifying which ROM image to run. Runs entirely on clk_pl,
+// so no CDC synchronizer is needed for img_done (unlike the old PS-bridge
+// GPIO flag, which crossed from the PS's own clock domain).
 // =============================================================================
 wire [9:0] img_idx;
 wire [7:0] img_byte;
@@ -106,28 +117,50 @@ wire       img_byte_we;
 wire       img_done;
 
 uart_rx_module #(
-    .CLK_FREQ(40_000_000), .BAUD_RATE(125_000), .IMG_BYTES(784)
+    .CLK_FREQ(40_000_000), .BAUD_RATE(125_000), .IMG_BYTES(1)
 ) u_uart_rx (
     .clk(clk_pl), .rst(rst), .rx(uart_rx),
     .img_idx(img_idx), .img_byte(img_byte),
     .img_byte_we(img_byte_we), .img_done(img_done)
 );
 
-always @(posedge clk_pl) begin
-    if (img_byte_we) fmap0[img_idx] <= $signed(img_byte);
-end
+// ROM-to-fmap0 copy state machine — triggered whenever a new image index
+// arrives (img_done pulses right after the UART receiver gets its single
+// index byte). Copies 784 bytes from test_images[selected_index*784 +: 784]
+// into fmap0, one byte per cycle. image_ready mirrors the old semantics:
+// cleared the instant a new index arrives, set once the 784-byte copy
+// completes. Out-of-range index bytes (>= NUM_TEST_IMAGES) are ignored —
+// fmap0/image_ready are left exactly as they were, rather than reading
+// test_images out of bounds.
+reg [3:0] selected_index;
+reg       copying;
+reg [9:0] copy_addr;
+reg       image_ready;
 
-// image_ready: cleared the moment a new image starts arriving (first byte,
-// img_idx==0), set once the full 784-byte image has been received. Mirrors
-// the old PS-bridge "ready" GPIO semantics, but now driven directly on
-// clk_pl with no clock-domain crossing.
-reg image_ready;
 always @(posedge clk_pl or posedge rst) begin
     if (rst) begin
-        image_ready <= 1'b0;
+        selected_index <= 4'd0;
+        copying        <= 1'b0;
+        copy_addr      <= 10'd0;
+        image_ready    <= 1'b0;
     end else begin
-        if (img_byte_we && img_idx == 10'd0) image_ready <= 1'b0;
-        if (img_done)                        image_ready <= 1'b1;
+        if (img_done) begin
+            if (img_byte[3:0] < NUM_TEST_IMAGES) begin
+                selected_index <= img_byte[3:0];
+                copying        <= 1'b1;
+                copy_addr      <= 10'd0;
+                image_ready    <= 1'b0;
+            end
+            // else: out-of-range index, ignored — no change to fmap0/image_ready
+        end else if (copying) begin
+            fmap0[copy_addr] <= $signed(test_images[selected_index * 784 + copy_addr]);
+            if (copy_addr == 10'd783) begin
+                copying     <= 1'b0;
+                image_ready <= 1'b1;
+            end else begin
+                copy_addr <= copy_addr + 10'd1;
+            end
+        end
     end
 end
 

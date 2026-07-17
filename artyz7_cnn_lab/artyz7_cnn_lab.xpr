@@ -241,6 +241,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/int8/test_images.mem">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../coe_files/int8/test_images.mem"/>
+          <Attr Name="ImportTime" Val="1784294074"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="top_module"/>
