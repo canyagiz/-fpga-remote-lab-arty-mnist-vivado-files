@@ -106,28 +106,39 @@ wire       img_byte_we;
 wire       img_done;
 
 uart_rx_module #(
-    .CLK_FREQ(40_000_000), .BAUD_RATE(125_000), .IMG_BYTES(784)
+    .CLK_FREQ(40_000_000), .BAUD_RATE(125_000), .IMG_BYTES(1)
 ) u_uart_rx (
     .clk(clk_pl), .rst(rst), .rx(uart_rx),
     .img_idx(img_idx), .img_byte(img_byte),
     .img_byte_we(img_byte_we), .img_done(img_done)
 );
 
-always @(posedge clk_pl) begin
-    if (img_byte_we) fmap0[img_idx] <= $signed(img_byte);
-end
+// =============================================================================
+// Chunked pixel receiver — with IMG_BYTES(1), every single UART byte that
+// arrives is one pixel of the current image. pixel_idx tracks position
+// (0-783) within the current 784-byte image; RPi resets this to 0 via BTN0
+// before starting a new transfer, then sends pixels one at a time, checking
+// pixel_idx (exposed on the LEDs below, mod 64) after each byte before
+// sending the next. image_ready sets once all 784 pixels have arrived.
+// =============================================================================
+reg [9:0] pixel_idx;
+reg       image_ready;
 
-// image_ready: cleared the moment a new image starts arriving (first byte,
-// img_idx==0), set once the full 784-byte image has been received. Mirrors
-// the old PS-bridge "ready" GPIO semantics, but now driven directly on
-// clk_pl with no clock-domain crossing.
-reg image_ready;
 always @(posedge clk_pl or posedge rst) begin
     if (rst) begin
+        pixel_idx   <= 10'd0;
         image_ready <= 1'b0;
     end else begin
-        if (img_byte_we && img_idx == 10'd0) image_ready <= 1'b0;
-        if (img_done)                        image_ready <= 1'b1;
+        if (img_byte_we) begin
+            fmap0[pixel_idx] <= $signed(img_byte);
+            if (pixel_idx == 10'd783) begin
+                pixel_idx   <= 10'd0;
+                image_ready <= 1'b1;
+            end else begin
+                pixel_idx   <= pixel_idx + 10'd1;
+                image_ready <= 1'b0;
+            end
+        end
     end
 end
 
@@ -435,8 +446,12 @@ always @(posedge clk_pl or posedge rst) begin
     end
 end
 
-assign led[3:0] = r_result;
-assign led[4]   = r_inference_run;
-assign led[5]   = r_result_ready;
+// Until the image transfer completes (image_ready==0), the LEDs show pixel
+// transfer progress (the RPi's ACK/retry mechanism reads this back). Once
+// the transfer completes (image_ready==1) and normal inference proceeds,
+// the LEDs show the usual result.
+assign led[3:0] = image_ready ? r_result        : pixel_idx[3:0];
+assign led[4]   = image_ready ? r_inference_run : pixel_idx[4];
+assign led[5]   = image_ready ? r_result_ready  : pixel_idx[5];
 
 endmodule
