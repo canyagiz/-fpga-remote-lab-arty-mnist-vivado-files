@@ -58,6 +58,26 @@ set_property -dict { PACKAGE_PIN V12  IOSTANDARD LVCMOS33 } [get_ports { led[4] 
 set_property -dict { PACKAGE_PIN W13  IOSTANDARD LVCMOS33 } [get_ports { led[5] }]
 
 ## ----------------------------------------------------------------------------
+## Onboard physical LEDs — visual convenience, visible standing at the board
+## (see top_module.v port comment). Per Vivado's arty-z7-20 board file
+## (part0_pins.xml): plain LD0-LD3 are leds_4bits_tri_o_0..3; LD4/LD5 are RGB
+## (3 channels each, rgb_led_tri_o_0..2 = LD4 R/G/B, _3..5 = LD5 R/G/B) — only
+## one channel per RGB LED is driven here (single-color indicator), the
+## other channels are simply left unconnected (undriven = that color channel
+## stays off, which is what we want).
+## ----------------------------------------------------------------------------
+set_property -dict { PACKAGE_PIN R14  IOSTANDARD LVCMOS33 } [get_ports { onboard_led[0] }]
+set_property -dict { PACKAGE_PIN P14  IOSTANDARD LVCMOS33 } [get_ports { onboard_led[1] }]
+set_property -dict { PACKAGE_PIN N16  IOSTANDARD LVCMOS33 } [get_ports { onboard_led[2] }]
+set_property -dict { PACKAGE_PIN M14  IOSTANDARD LVCMOS33 } [get_ports { onboard_led[3] }]
+
+## LD4 (RGB, R channel only) — inference running
+set_property -dict { PACKAGE_PIN L15  IOSTANDARD LVCMOS33 } [get_ports { onboard_led4 }]
+
+## LD5 (RGB, R channel only) — result ready
+set_property -dict { PACKAGE_PIN G14  IOSTANDARD LVCMOS33 } [get_ports { onboard_led5 }]
+
+## ----------------------------------------------------------------------------
 ## UART RX (Raspberry Pi TX -> FPGA), real Pmod JA header
 ## ----------------------------------------------------------------------------
 ## UART_RX — JA1 — image bytes in, 8N1, 125000 baud (see uart_rx_module.v
@@ -75,6 +95,11 @@ set_false_path -from [get_ports { btn1 }]
 ## Output LEDs drive RPi GPIO — no timing constraint on outputs
 set_false_path -to [get_ports { led[*] }]
 
+## Onboard LEDs are the same kind of purely-visual, no-timing-relationship
+## output as led[*] above (just physical indicator lights, not sampled by
+## any clocked logic) — same false_path treatment.
+set_false_path -to [get_ports { onboard_led[*] onboard_led4 onboard_led5 }]
+
 ## btn0/btn1/led[*]/uart_rx have no real I/O timing relationship to any clock
 ## (RPi GPIO bit-banging / async serial line) — these
 ## set_input_delay/set_output_delay(0) declarations exist only to satisfy the
@@ -85,6 +110,7 @@ set_false_path -to [get_ports { led[*] }]
 ## additional timing constraint is needed on it beyond the input_delay stub.
 set_input_delay  -clock [get_clocks clk_out1_clk_wiz_0] -max 0 [get_ports { btn0 btn1 uart_rx }]
 set_output_delay -clock [get_clocks clk_out1_clk_wiz_0] -max 0 [get_ports { led[*] }]
+set_output_delay -clock [get_clocks clk_out1_clk_wiz_0] -max 0 [get_ports { onboard_led[*] onboard_led4 onboard_led5 }]
 
 ## clk_wiz_0's MMCM produces TWO generated-clock definitions on its own
 ## CLKOUT0 and CLKFBOUT pins (clk_out1_clk_wiz_0/_1 and

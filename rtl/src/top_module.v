@@ -20,6 +20,12 @@
 //              more "standard" 115200) — carries the 784-byte test image
 //              directly into fmap0. No ARM core, no AXI, no shared BRAM, no
 //              BOOT.BIN/FSBL: the image path is entirely PL logic.
+//   onboard_led / onboard_led4 / onboard_led5 : Arty's own onboard LEDs
+//              (LD0-LD3, and one channel each of the RGB LD4/LD5) — a visual
+//              convenience so the result is visible at the board itself,
+//              independent of the RPi/website. Always mirror the underlying
+//              result/status signals directly (never the pixel-transfer-
+//              progress mux that led[3:0]/led[4]/led[5] show).
 //
 // Feature map memories between stages are simple reg arrays.
 // Vivado infers these as BRAM or distributed RAM automatically.
@@ -33,7 +39,18 @@ module top_module (
     input  wire        btn0,      // JB3 — physical reset
     input  wire        btn1,      // JB4 — start inference
     output wire [5:0]  led,       // JB: [3:0]=digit, [4]=running, [5]=ready
-    input  wire        uart_rx    // JA1 — Raspberry Pi UART TX -> here
+    input  wire        uart_rx,   // JA1 — Raspberry Pi UART TX -> here
+
+    // Onboard physical LEDs — purely a visual convenience so the result is
+    // visible standing at the board, independent of the RPi/website path.
+    // Mirror the same underlying signals as led[3:0]/led[4]/led[5], not the
+    // pixel-transfer-progress mux (so these always read as "digit / running
+    // / ready", never a transfer counter). LD4/LD5 are RGB LEDs on this
+    // board; only one channel each is driven (single-color indicator), the
+    // other two channels are tied low in the XDC.
+    output wire [3:0]  onboard_led,      // LD0-3 — predicted digit
+    output wire        onboard_led4,     // LD4 (one RGB channel) — inference running
+    output wire        onboard_led5      // LD5 (one RGB channel) — result ready
 );
 
 // =============================================================================
@@ -453,5 +470,11 @@ end
 assign led[3:0] = image_ready ? r_result        : pixel_idx[3:0];
 assign led[4]   = image_ready ? r_inference_run : pixel_idx[4];
 assign led[5]   = image_ready ? r_result_ready  : pixel_idx[5];
+
+// Onboard physical LEDs — always the underlying result/status signals
+// directly, not the transfer-progress mux (see port comment above).
+assign onboard_led  = r_result;
+assign onboard_led4 = r_inference_run;
+assign onboard_led5 = r_result_ready;
 
 endmodule
